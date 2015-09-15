@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/nav_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#ffff"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/toolbar">
+
+            </include>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:textColor="@color/primary_text"
+                android:text="Activity Content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!-- navigation drawer -->
+        <RelativeLayout
+            android:layout_gravity="left|start"
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/nav_drawer_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#eee"
+                android:background="#fff"
+                android:dividerHeight="1dp" />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>
