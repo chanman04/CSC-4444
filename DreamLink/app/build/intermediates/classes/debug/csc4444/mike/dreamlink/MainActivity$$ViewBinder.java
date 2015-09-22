@@ -8,12 +8,12 @@ import butterknife.ButterKnife.ViewBinder;
 public class MainActivity$$ViewBinder<T extends csc4444.mike.dreamlink.MainActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131558563, "field 'mainToolbar'");
-    target.mainToolbar = finder.castView(view, 2131558563, "field 'mainToolbar'");
-    view = finder.findRequiredView(source, 2131558519, "field 'navDrawerLayout'");
-    target.navDrawerLayout = finder.castView(view, 2131558519, "field 'navDrawerLayout'");
-    view = finder.findRequiredView(source, 2131558520, "field 'navDrawerList'");
-    target.navDrawerList = finder.castView(view, 2131558520, "field 'navDrawerList'");
+    view = finder.findRequiredView(source, 2131558537, "field 'mainToolbar'");
+    target.mainToolbar = finder.castView(view, 2131558537, "field 'mainToolbar'");
+    view = finder.findRequiredView(source, 2131558503, "field 'navDrawerLayout'");
+    target.navDrawerLayout = finder.castView(view, 2131558503, "field 'navDrawerLayout'");
+    view = finder.findRequiredView(source, 2131558504, "field 'navDrawerList'");
+    target.navDrawerList = finder.castView(view, 2131558504, "field 'navDrawerList'");
   }
 
   @Override public void unbind(T target) {
