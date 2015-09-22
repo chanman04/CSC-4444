@@ -13,19 +13,32 @@
         android:id="@+id/dream_entry_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:paddingTop="25dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/dream_title_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/dream_et"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
 
         <Button
             android:id="@+id/submit_dream_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/submit_button_text"/>
 
     </LinearLayout>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expandableListView" />
 
 </LinearLayout>

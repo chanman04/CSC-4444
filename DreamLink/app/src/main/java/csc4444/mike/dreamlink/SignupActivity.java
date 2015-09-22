@@ -113,7 +113,7 @@ public class SignupActivity extends ActionBarActivity{
                 if (e == null) {
 
                     Toast.makeText(SignupActivity.this, "Your account was created successfully!", Toast.LENGTH_SHORT).show();
-                    Intent feedIntent = new Intent(SignupActivity.this, MainActivity.class);
+                    Intent feedIntent = new Intent(SignupActivity.this, RecordDream.class);
                     startActivity(feedIntent);
 
                 } else {
