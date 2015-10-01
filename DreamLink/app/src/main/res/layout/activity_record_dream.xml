@@ -1,44 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" android:layout_width="fill_parent"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:weightSum="1">
 
-    <include
-        layout="@layout/toolbar">
 
-    </include>
-
-    <LinearLayout
-        android:id="@+id/dream_entry_layout"
+    <TextView
+        android:id="@+id/dream_title_text"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingTop="25dp"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal">
-
-        <EditText
-            android:id="@+id/dream_title_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/dream_et"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-
-        <Button
-            android:id="@+id/submit_dream_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/submit_button_text"/>
-
-    </LinearLayout>
-
-    <ExpandableListView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/expandableListView" />
+        android:layout_marginTop="20sp"
+        android:padding="10sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Title Your Dream"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/dream_title_ET"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="title...."/>
+    <TextView
+        android:id="@+id/record_dream_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:padding="10sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Whats the dream?"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/dream_ET"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLines="20"
+        android:lines="4"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.42"
+        android:hint="Dream goes here"/>
+
+    <TextView
+        android:id="@+id/text_hashtag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="#hashtag Your Dream"
+        android:paddingTop="20sp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/hashtags_ET"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.12"
+        android:hint="#hashtags...."/>
+
 
 </LinearLayout>
