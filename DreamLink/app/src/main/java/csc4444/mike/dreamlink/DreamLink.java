@@ -9,6 +9,24 @@ import com.parse.Parse;
  */
 public class DreamLink extends Application {
 
+    private String username;
+    private static DreamLink singleInstance = null;
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setWagerLogLV(String user) {
+        this.username = user;
+    }
+
+    public static DreamLink getInstance()
+    {
+        return singleInstance;
+    }
+
+
     @Override
     public void onCreate(){
         super.onCreate();

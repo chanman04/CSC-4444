@@ -1,4 +1,4 @@
-package csc4444.mike.dreamlink;
+package csc4444.mike.dreamlink.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +12,7 @@ import com.parse.ParseObject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import csc4444.mike.dreamlink.R;
 
 /**
  * Created by Mike on 9/22/15.
@@ -20,8 +21,8 @@ public class RecordDream extends ActionBarActivity {
 
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
-    @Bind(R.id.dream_title_et) EditText dreamTitleET;
-    @Bind(R.id.dream_et) EditText recordDreamET;
+    @Bind(R.id.dream_title_ET) EditText dreamTitleET;
+    @Bind(R.id.dream_ET) EditText recordDreamET;
     @Bind(R.id.submit_dream_button) Button submitDreamButton;
 
     private String dreamTitle = "";

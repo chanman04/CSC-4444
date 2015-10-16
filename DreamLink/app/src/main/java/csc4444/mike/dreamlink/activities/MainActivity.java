@@ -1,4 +1,4 @@
-package csc4444.mike.dreamlink;
+package csc4444.mike.dreamlink.activities;
 
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import csc4444.mike.dreamlink.R;
 
 public class MainActivity extends ActionBarActivity{
 
@@ -26,7 +27,7 @@ public class MainActivity extends ActionBarActivity{
     private ActionBarDrawerToggle navDrawerToggle;@Bind (R.id.nav_drawer_list)
     ListView navDrawerList;
     private ArrayAdapter<String> navDrawerAdapter;
-    private String [] navTitlesAdapter = {"Home","Post Your Dream","Dream Feed",};
+    private String [] navTitlesAdapter = {"Post Your Dream","Interpret Your Dreams",};
 
 
     @Override
@@ -98,8 +99,12 @@ public class MainActivity extends ActionBarActivity{
 
             switch (position) {
                 case 1:
-                    Intent menuNavIntent = new Intent(MainActivity.this, RecordDream.class);
-                    startActivity(menuNavIntent);
+                    Intent recordNavIntent = new Intent(MainActivity.this, RecordDream.class);
+                    startActivity(recordNavIntent);
+                    break;
+                case 2:
+                    Intent logNavIntent = new Intent(MainActivity.this, DreamLog.class);
+                    startActivity(logNavIntent);
                     break;
 
                 default:

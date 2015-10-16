@@ -1,4 +1,4 @@
-package csc4444.mike.dreamlink;
+package csc4444.mike.dreamlink.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import com.parse.SignUpCallback;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import csc4444.mike.dreamlink.R;
 
 /**
  * Created by Mike on 9/22/15.
