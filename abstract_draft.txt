@@ -1,0 +1,17 @@
+Dreaming was considered a supernatural communication or a means of divine intervention, whose message could be unravelled by 
+people with certain powers. Our project will focus on dream interpretation and display it via Android Apps. Starting with 400 dreaming
+terms, such as ocean, dark, death, accident, etc, we create interpretation for each term which was obtained from dream dictionary. 
+With IBM Watson system, we uploaded dream documents, including both terms and interpretation answers into corpus. With IBM Watson 
+learning process, we can get 400 Q&A pairs for each dream term. For example, if you ask "what's meaning if I dreamt of walking alone
+at dark", through IBM Watson, you can get several answers in different correlation levels. Especially, the top answer is 
+the one highly correlated with your question. 
+
+In addition, the platform applied for users is Android Apps. Android provides app framework (Android Studio) that allows developers to provide unique resources
+for different device configurations. Here, we mainly use XML and JavaScript for Android programming. The connection between IBM Watson 
+and Android Apps is rest API which can be reached from IBM Bluemix. When users asked questions with Android device, through rest API, the question documents will 
+be delivered to IBM Watson system. Meanwhile, after IBM Watson Q&A process is done, then transfer answers back to users' Android device
+via rest API again. For example, when a user ask "I dreamt an accident last night, what does this mean?", jason file will be deliver to 
+IBM Waston corpus, after interpretation, deliver answer to the user's Android device and show up on the interface. 
+
+Our project is robust since dream interpretation is closely correlated to people's life. With our Dream Catcher App, it would be a 
+great help for people's life.
