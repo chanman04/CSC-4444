@@ -1,5 +1,6 @@
 package csc4444.mike.dreamlink.activities;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,7 +28,7 @@ import csc4444.mike.dreamlink.components.Dream;
 /**
  * Created by Mike on 10/1/15.
  */
-public class DreamLog extends ActionBarActivity {
+public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
     @Bind(R.id.dream_log_LV) ListView dreamLogLV;
@@ -38,11 +39,15 @@ public class DreamLog extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_dream);
-        ButterKnife.bind(this);
+        //setContentView(R.layout.activity_record_dream);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.dream_view);
+        //ButterKnife.bind(this);
 
-        setSupportActionBar(mainToolbar);
-        getSupportActionBar().setTitle("Dream Log");
+        ListView lv = (ListView) findViewById(R.id.listView1);
+
+        //setSupportActionBar(mainToolbar);
+        //getSupportActionBar().setTitle("Dream Log");
 
         //Get a instance off the app to pull the global username we are storing for this app user
         DreamLink dreamLink = DreamLink.getInstance();
@@ -94,7 +99,8 @@ public class DreamLog extends ActionBarActivity {
             }
         });
 
-
+        DreamAdapter adp = new DreamAdapter(this, R.layout.item_layout, dreamLog);
+        lv.setAdapter(adp);
 
         dreamLogLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
