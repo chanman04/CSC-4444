@@ -1,5 +1,6 @@
 package csc4444.mike.dreamlink.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.BMSClient;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,7 +39,11 @@ public class MainActivity extends ActionBarActivity{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //mainToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //Initialize the IBM Watson Q&A service
+        //BMSClient.getInstance().initialize(getApplicationContext(), "http://dreams.mybluemix.net", applicationContext(), "dd2f777b-4321-4625-90ff-25ddc6a851c8");
+
+
+                //mainToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         mainToolbar.getResources().getColor(R.color.primarycolor);

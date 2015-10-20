@@ -1,6 +1,7 @@
 package csc4444.mike.dreamlink;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.parse.Parse;
 
@@ -26,13 +27,16 @@ public class DreamLink extends Application {
         return singleInstance;
     }
 
+    public Context getContext(){
+            return singleInstance;
+    }
+
 
     @Override
     public void onCreate(){
         super.onCreate();
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "EZZtXXc6TYVQdpb4RqMCuRtvMT9TU35fnwBhygFP", "U2Mge5DRDu5Q3ZftP1Fi4Y5C8SICfMurNf3fCrRr");
-
 
     }
 }

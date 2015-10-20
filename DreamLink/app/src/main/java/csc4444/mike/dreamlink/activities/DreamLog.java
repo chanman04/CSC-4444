@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -31,9 +32,11 @@ public class DreamLog extends ActionBarActivity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
     @Bind(R.id.dream_log_LV) ListView dreamLogLV;
+    @Bind(R.id.dream_title_text) TextView dreamTitleText;
 
     private Stack<Dream> dreamLog = new Stack<>();
     private String userName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +62,9 @@ public class DreamLog extends ActionBarActivity {
                 if (e == null) {
                     for (ParseObject dreamParseObj : objects) {
 
-//                        Base case we setup to query from Parse take Wager objects from cloud and set
-//                        their values to a local Wager object we display in our ListView.
+//                        Base case we setup to query from Parse take Dream objects from cloud and set
+//                        their values to a local Dream object we display in our ListView.
 //
-//                        In the future we to setup to query for specific Wager objects
-//                        FootballWager objects, NBAWager objects etc...
-
-
                         //retrieve the instance variables for the Dream object from Parse
                         dreamParseObj.get("DREAM_TITLE");
                         dreamParseObj.get("DREAM_ENTRY");
@@ -79,6 +78,8 @@ public class DreamLog extends ActionBarActivity {
                         Dream dreamObj = new Dream();
                         dreamObj.setTitle(titlePH);
                         dreamObj.setEntry(entryPH);
+
+                        dreamTitleText.setText(titlePH);
 
 
                         //Finally we add Dream objects into our Stack so we can pop them off one by one and display
