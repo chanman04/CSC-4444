@@ -13,7 +13,7 @@ public class Dream {
         super();
     }
     public Dream(String dreamTitle, String dreamEntry){
-        super();
+
         this.dreamTitle = dreamTitle;
         this.dreamEntry = dreamEntry;
     }

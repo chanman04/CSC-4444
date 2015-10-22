@@ -1,6 +1,7 @@
 package csc4444.mike.dreamlink.activities;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -31,18 +33,16 @@ import csc4444.mike.dreamlink.components.Dream;
 public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
-    @Bind(R.id.dream_log_LV) ListView dreamLogLV;
+//    @Bind(R.id.dream_log_LV) ListView dreamLogLV;
 
-    private Stack<Dream> dreamLog = new Stack<>();
-    private String userName;
+    private List<Dream> dreamLog = new ArrayList<Dream>();
+    private String userName = "captaincrunch";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_record_dream);
-        //setContentView(R.layout.activity_main);
         setContentView(R.layout.dream_view);
-        //ButterKnife.bind(this);
+//        ButterKnife.bind(this);
 
         ListView lv = (ListView) findViewById(R.id.listView1);
 
@@ -51,7 +51,10 @@ public class DreamLog extends Activity {
 
         //Get a instance off the app to pull the global username we are storing for this app user
         DreamLink dreamLink = DreamLink.getInstance();
-        userName = dreamLink.getUsername();
+
+        final DreamAdapter adp = new DreamAdapter(this, R.layout.item_layout, dreamLog);
+        lv.setAdapter(adp);
+
 
         //ParseQuery to pull all this user's dreams using the global username we pulled up there ^
         ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("DREAM");
@@ -62,36 +65,25 @@ public class DreamLog extends Activity {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
-                    for (ParseObject dreamParseObj : objects) {
+                    for (int i = 0; i<objects.size(); i++) {
 
-//                        Base case we setup to query from Parse take Wager objects from cloud and set
-//                        their values to a local Wager object we display in our ListView.
+//                        Base case we setup to query from Parse take Dream objects from cloud and set
+//                        their values to a local Dream object we display in our ListView.
 //
-//                        In the future we to setup to query for specific Wager objects
-//                        FootballWager objects, NBAWager objects etc...
-
-
-                        //retrieve the instance variables for the Dream object from Parse
-                        dreamParseObj.get("DREAM_TITLE");
-                        dreamParseObj.get("DREAM_ENTRY");
-
-
-                        //May need placeholder variables in between ParseWagerObjects and Local Wager Obj
-                        String titlePH = dreamParseObj.get("DREAM_TITLE").toString();
-                        String entryPH = dreamParseObj.get("DREAM_ENTRY").toString();
-
-                        //Setter taking value from Parse Wager Obj --> Wager Obj
+//                        In the future we to setup to query for specific Dream objects
+//
                         Dream dreamObj = new Dream();
-                        dreamObj.setTitle(titlePH);
-                        dreamObj.setEntry(entryPH);
-
+                        dreamObj.setTitle(objects.get(i).get("USER_TITLE").toString());
+                        dreamObj.setEntry(objects.get(i).get("USER_ENTRY").toString());
 
                         //Finally we add Dream objects into our Stack so we can pop them off one by one and display
-                        dreamLog.push(dreamObj);
+                        dreamLog.add(dreamObj);
+                        adp.notifyDataSetChanged();
 
 
+
+                        Log.d("score", "Retrieved " + objects.size() + " scores");
                     }
-                    Log.d("score", "Retrieved " + objects.size() + " scores");
 
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
@@ -99,15 +91,14 @@ public class DreamLog extends Activity {
             }
         });
 
-        DreamAdapter adp = new DreamAdapter(this, R.layout.item_layout, dreamLog);
-        lv.setAdapter(adp);
 
-        dreamLogLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            }
-        });
+//        dreamLogLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//            }
+//        });
 
     }
 
