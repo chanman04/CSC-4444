@@ -22,22 +22,15 @@ import csc4444.mike.dreamlink.R;
  */
 public class DreamInterpreter extends ActionBarActivity {
 
-/*   {
-        "question_and_answer": [
-        {
-            "name": "Question and Answer-gw",
-                "label": "question_and_answer",
-                "plan": "question_and_answer_free_plan",
-                "credentials": {
-            "url": "https://gateway.watsonplatform.net/question-and-answer-beta/api",
-                    "username": "0851d2c9-736a-4b26-a558-dfcd1a551b7b",
-                    "password": "9cch53keUcuJ"
-        }
-        }
-        ]
-    }
-*/
 
+//
+//    {
+//        "credentials": {
+//        "url": "https://gateway.watsonplatform.net/question-and-answer-beta/api",
+//                "username": "e0135a85-6fc6-4703-ae61-daf5170aee1a",
+//                "password": "pAgWm05ktz0X"
+//    }
+//    }
     @Bind(R.id.toolbar) Toolbar mainToolbar;
 
     @Override

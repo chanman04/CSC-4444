@@ -14,13 +14,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ibm.mobilefirstplatform.clientsdk.android.core.api.BMSClient;
+
+import com.ibm.mobile.services.core.IBMBluemix;
+
+import java.net.MalformedURLException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import csc4444.mike.dreamlink.R;
 
-public class MainActivity extends ActionBarActivity{
+public class MainActivity extends ActionBarActivity implements {
 
 
     @Bind(R.id.toolbar)
@@ -32,6 +35,10 @@ public class MainActivity extends ActionBarActivity{
     private ArrayAdapter<String> navDrawerAdapter;
     private String [] navTitlesAdapter = {"Post Your Dream","Interpret Your Dreams",};
 
+    private final String bluemixAppRoute = "http://dreams.mybluemix.net\n";
+    private final String bluemixAppGUID = "dd2f777b-4321-4625-90ff-25ddc6a851c8\n";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +46,9 @@ public class MainActivity extends ActionBarActivity{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //Initialize the IBM Watson Q&A service
-        //BMSClient.getInstance().initialize(getApplicationContext(), "http://dreams.mybluemix.net", applicationContext(), "dd2f777b-4321-4625-90ff-25ddc6a851c8");
+        IBMBluemix.initialize(this.getApplicationContext(),bluemixAppGUID,"7kozH9C8QTyuPZzZFv7LEg",bluemixAppRoute);
 
 
-                //mainToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         mainToolbar.getResources().getColor(R.color.primarycolor);

@@ -40,7 +40,6 @@ MERGED from com.google.android.gms:play-services-maps:7.5.0:20:5
 		ADDED from AndroidManifest.xml:6:22
 application
 ADDED from AndroidManifest.xml:8:5
-MERGED from com.ibm.mobilefirstplatform.clientsdk.android:core:1.0.0:13:5
 MERGED from com.google.android.gms:play-services:7.5.0:19:5
 MERGED from com.google.android.gms:play-services-ads:7.5.0:24:5
 MERGED from com.google.android.gms:play-services-base:7.5.0:20:5
@@ -167,7 +166,7 @@ ADDED from AndroidManifest.xml:32:9
 		ADDED from AndroidManifest.xml:33:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
-MERGED from com.ibm.mobilefirstplatform.clientsdk.android:core:1.0.0:7:5
+MERGED from com.android.support:multidex:1.0.1:18:5
 MERGED from com.google.android.gms:play-services:7.5.0:18:5
 MERGED from com.google.android.gms:play-services-ads:7.5.0:23:5
 MERGED from com.google.android.gms:play-services-base:7.5.0:18:5
@@ -260,10 +259,6 @@ MERGED from com.android.support:support-v4:22.2.1:20:5
 	android:minSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from com.ibm.mobilefirstplatform.clientsdk.android:core:1.0.0:11:5
-	android:name
-		ADDED from com.ibm.mobilefirstplatform.clientsdk.android:core:1.0.0:11:22
 activity#com.google.android.gms.ads.AdActivity
 ADDED from com.google.android.gms:play-services-ads:7.5.0:26:9
 	android:configChanges
