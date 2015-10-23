@@ -33,7 +33,6 @@ import csc4444.mike.dreamlink.components.Dream;
 public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
-//    @Bind(R.id.dream_log_LV) ListView dreamLogLV;
 
     private List<Dream> dreamLog = new ArrayList<Dream>();
     private String userName = "captaincrunch";
@@ -44,7 +43,7 @@ public class DreamLog extends Activity {
         setContentView(R.layout.dream_view);
 //        ButterKnife.bind(this);
 
-        ListView lv = (ListView) findViewById(R.id.listView1);
+        ListView lv = (ListView) findViewById(R.id.dream_list);
 
         //setSupportActionBar(mainToolbar);
         //getSupportActionBar().setTitle("Dream Log");
@@ -58,7 +57,7 @@ public class DreamLog extends Activity {
 
         //ParseQuery to pull all this user's dreams using the global username we pulled up there ^
         ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("DREAM");
-        parseQuery.whereEqualTo("USER", userName);
+//        parseQuery.whereEqualTo("USER", userName);
         parseQuery.findInBackground(new FindCallback<ParseObject>() {
 
             //Error check for ParseQuery
