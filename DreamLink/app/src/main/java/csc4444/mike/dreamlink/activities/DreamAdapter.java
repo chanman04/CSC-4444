@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -22,16 +23,13 @@ import java.util.Stack;
 public class DreamAdapter extends ArrayAdapter<Dream> {
     static Context context;
     static int layoutResourceId;
-    List<Dream> data = new Stack<>();
+    //List<Dream> data = new Stack<>();
+    List<Dream> data = new ArrayList<Dream>();
 
     public DreamAdapter(Context context, int layoutResourceId, List<Dream> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
-        /*for (Dream d : this.data) {
-            data.push(d);
-        }
-        ;*/
         this.data = data;
     }
 
