@@ -121,7 +121,7 @@ public class MainActivity extends Activity implements ResponseListener {
 
     @Override
     public void onSuccess(Response response) {
-        
+
     }
 
     @Override

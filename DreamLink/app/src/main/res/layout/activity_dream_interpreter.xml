@@ -9,4 +9,32 @@
 
     </include>
 
+    <EditText
+        android:id="@+id/question_field"
+        android:hint="Enter your question about your dream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/answer_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="@id/question_field"
+        android:layout_marginTop="25dp"
+        android:text="@string/watson_reply_text"/>
+
+    <Button
+        android:id="@+id/submit_quest_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_button_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"/>
+
+
+
+
 </LinearLayout>

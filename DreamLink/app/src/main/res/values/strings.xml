@@ -14,4 +14,7 @@
     <string name="login_button_text">Login</string>
     <string name="submit_button_text">Submit</string>
     <string name="facebook_app_id">facebook_app_id</string>
+
+    <string name="watson_reply_text">Your interpretation of your dream is:</string>
+
 </resources>
