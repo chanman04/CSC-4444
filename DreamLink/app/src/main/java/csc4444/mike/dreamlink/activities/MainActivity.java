@@ -1,5 +1,6 @@
 package csc4444.mike.dreamlink.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
@@ -13,9 +14,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.ibm.mobile.services.core.IBMBluemix;
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.BMSClient;
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.Response;
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.ResponseListener;
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.Request;
+
+import org.json.JSONObject;
 
 import java.net.MalformedURLException;
 
@@ -23,7 +31,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import csc4444.mike.dreamlink.R;
 
-public class MainActivity extends ActionBarActivity implements {
+public class MainActivity extends Activity implements ResponseListener {
 
 
     @Bind(R.id.toolbar)
@@ -46,11 +54,21 @@ public class MainActivity extends ActionBarActivity implements {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        IBMBluemix.initialize(this.getApplicationContext(),bluemixAppGUID,"7kozH9C8QTyuPZzZFv7LEg",bluemixAppRoute);
+//        IBMBluemix.initialize(this.getApplicationContext(),bluemixAppGUID,"7kozH9C8QTyuPZzZFv7LEg",bluemixAppRoute);
+
+        try {
+            //initialize SDK with IBM Bluemix application ID and route
+            //TODO: Please replace <APPLICATION_ROUTE> with a valid ApplicationRoute and <APPLICATION_ID> with a valid ApplicationId
+            BMSClient.getInstance().initialize(this, bluemixAppRoute, bluemixAppRoute);
+            Toast.makeText(this, "IBM authentication worked finally", Toast.LENGTH_SHORT);
+
+        }
+        catch (MalformedURLException mue) {
+
+            Toast.makeText(this,"There is a problem with your IBM authentication bro",Toast.LENGTH_SHORT);
+        }
 
 
-        setSupportActionBar(mainToolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         mainToolbar.getResources().getColor(R.color.primarycolor);
 
         navDrawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer_layout);
@@ -100,6 +118,17 @@ public class MainActivity extends ActionBarActivity implements {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onSuccess(Response response) {
+        
+    }
+
+    @Override
+    public void onFailure(Response response, Throwable throwable, JSONObject jsonObject) {
+
+    }
+
     private class NavDrawerListener implements android.widget.AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

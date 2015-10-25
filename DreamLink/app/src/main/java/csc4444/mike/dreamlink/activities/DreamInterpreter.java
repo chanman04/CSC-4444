@@ -20,18 +20,19 @@ import csc4444.mike.dreamlink.R;
  * This is the class for Dream Interpretation. This activity is going to populate the view with the
  * user's Dream object they have created.
  */
-public class DreamInterpreter extends ActionBarActivity {
+public class DreamInterpreter extends ActionBarActivity{
 
 
-//
-//    {
-//        "credentials": {
-//        "url": "https://gateway.watsonplatform.net/question-and-answer-beta/api",
-//                "username": "e0135a85-6fc6-4703-ae61-daf5170aee1a",
-//                "password": "pAgWm05ktz0X"
-//    }
-//    }
+
     @Bind(R.id.toolbar) Toolbar mainToolbar;
+
+    //Save the IBM Question and Answer username and password to access the service
+    private final String username = "e0135a85-6fc6-4703-ae61-daf5170aee1a";
+    private final String password = "zpAgWm05ktz0X";
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,12 @@ public class DreamInterpreter extends ActionBarActivity {
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setTitle("Dream Interpreter");
 
+/*      QuestionAndAnswer service = new QuestionAndAnswer();
+        service.setUsernameAndPassword(username, password);
+        service.setDataset(QuestionAndAnswerDataset.HEALTHCARE);
+        WatsonAnswer watsonAnswers = service.ask("What is HIV?");
+        System.out.println(watsonAnswers);
+*/
 
 
     }
