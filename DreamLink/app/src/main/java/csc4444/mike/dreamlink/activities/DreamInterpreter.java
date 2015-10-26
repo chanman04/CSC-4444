@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ibm.watson.developer_cloud.question_and_answer.v1.QuestionAndAnswer;
+import com.ibm.watson.developer_cloud.question_and_answer.v1.model.WatsonAnswer;
+import com.ibm.watson.developer_cloud.service.WatsonService;
+
 import java.net.HttpURLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -36,7 +40,7 @@ public class DreamInterpreter extends Activity{
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
     @Bind(R.id.question_field) EditText questionET;
-    @Bind(R.id.answer_field) TextView answerET;
+    @Bind(R.id.answer_field) TextView answerTV;
     @Bind(R.id.submit_quest_button) Button submitQuestButton;
 
 
@@ -47,12 +51,15 @@ public class DreamInterpreter extends Activity{
 
     //String to store the EditText input
     public String questionText;
+    public String answerText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dream_interpreter);
         ButterKnife.bind(this);
+
+
 
         submitQuestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,12 +73,24 @@ public class DreamInterpreter extends Activity{
                     else{
 
                         /*
-                        Here is where we should take the String from the EditText and then parse it
-                        into a JSON object and send it to Watson. We check first if the user input a
-                        question if not throw a error. If there is some text then take it and try to
-                        parse and send it.
+                        Here we take the text from the EditText turn it into a Watson Question and
+                        returns a Watson Answer that we parse to a string and display in a TextView.
+                        Very close to having it working just need some small tweaks. Like so -->
+
+                        QuestionAndAnswer service = new QuestionAndAnswer();
+                        service.setUsernameAndPassword("<username>", "<password>");
+                        service.setDataset(QuestionAndAnswerDataset.HEALTHCARE);
+                        WatsonAnswer watsonAnswers = service.ask("What is HIV?");
+                        System.out.println(watsonAnswers);
+
                          */
                         questionText = questionET.getText().toString();
+                        QuestionAndAnswer service = new QuestionAndAnswer();
+                        service.setUsernameAndPassword(username, password);
+//                        service.setDataset("DREAMS");
+                        WatsonAnswer watsonAnswer = service.ask(questionText);
+                        answerText = watsonAnswer.toString();
+//                        answerTV.getText(answerText.toString());
 
                         //Temporary toast so I know all of the parsing of the text and sending it worked
                         Toast.makeText(DreamInterpreter.this, "Your question was submitted", Toast.LENGTH_SHORT).show();
@@ -88,27 +107,9 @@ public class DreamInterpreter extends Activity{
                     return;
 
                 }
-
             }
         });
 
-
-
-
-
-//        setSupportActionBar(mainToolbar);
-//        getSupportActionBar().setTitle("Dream Interpreter");
-
-/*      QuestionAndAnswer service = new QuestionAndAnswer();
-        service.setUsernameAndPassword(username, password);
-        service.setDataset(QuestionAndAnswerDataset.HEALTHCARE);
-        WatsonAnswer watsonAnswers = service.ask("What is HIV?");
-        System.out.println(watsonAnswers);
-*/
-
-
     }
-
-
 
 }

@@ -34,6 +34,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: 'Parse-*.jar')
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+    compile 'com.ibm.watson.developer_cloud:java-wrapper:1.1.1'
 
 }
 

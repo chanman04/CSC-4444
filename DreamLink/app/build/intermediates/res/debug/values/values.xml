@@ -421,6 +421,9 @@
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
+    <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="watson_reply_text">Your interpretation of your dream is:</string>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
