@@ -1,0 +1,37 @@
+Outline for report 
+
+1. Abstract (Done)
+
+2. Introduction (Waston, IBM bluemix and Android App)
+	2.1 Background, terminology explanation
+	2.2 Purpose
+	2.3 Intended Audience and reading suggestions
+	2.4 Product scope
+
+3.  User Guide
+	3.1 App feature
+	3.2 Operating Environment
+	3.3 User Documentation
+	3.4 Assumptions and Dependencies
+
+4. External Interface
+	4.1 User interface
+	4.2 Software interface
+	4.3 rest API
+
+5. System features
+	5.1 Login Screen 
+	5.2 Sign up Screen
+	5.3 Functions, example test and result
+	5.4 Possible Issues
+	
+6. Other artificial intelligent functions
+	6.1 Security
+	6.2 Rational agent
+	6.2 Performance comparison with other similar Apps
+
+7. Results and Conclusions
+
+
+Reference
+Appendix 

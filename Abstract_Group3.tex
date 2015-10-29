@@ -90,13 +90,13 @@
 {\fontfamily{cmr}\selectfont
 % font: https://www.sharelatex.com/learn/Font_typefaces
 
-		Dreaming was considered a supernatural communication or a means of divine intervention, whose message could be unravelled by people with certain powers. Our project, Dream Catcher, will focus on dream interpretation and display it via Android Apps. Starting with 400 dream terms, such as accident, darkness, falling, flying, ocean, etc., we created interpretations for each term obtained from a dream dictionary. With IBM Watson system, we uploaded documents into corpus, which included both dream terms and its interpretations. With IBM Watson learning process, we generated 500 Q\&A pairs from the uploaded dream documents. For instance, if you ask IBM Watson "What does it mean when I dream about falling?", you can get several answers in different correlation levels. Generally, the top response is the most relevant answer to the question. \\
+		Dreaming was considered a supernatural communication or a means of divine intervention, whose message could be unravelled by people with certain powers. Our project, Dream Catcher, will focus on dream interpretation and display it via an Android mobile application. Starting with 400 dream terms, such as accident, darkness, falling, flying, ocean, etc., we created interpretations for each term obtained from a dream dictionary. We utilized IBM Watson system and uploaded documents into the document corpus, which included both dream terms and its interpretations. Meanwhile, we utilized the IBM Watson learning process and generated 500 Q\&A pairs from the uploaded dream documents. For instance, if you ask IBM Watson "What does it mean when I dream about falling?", you can get several answers in different correlation levels. Generally, the top response is the most relevant answer to the question. \\
 
-	In addition, the platform applied for users is Android Apps. Android provides an app framework (Android Studio) that allows developers to provide unique resources for different device configurations. For our application, we mainly use XML and JavaScript for Android programming.  The connection between IBM Watson and Android Apps is through rest API, which can be reached from IBM Bluemix. When users asked questions via an Android device, the question documents will be then delivered to the IBM Watson's system through the rest API. After IBM Watson finishes processing the question, it then transfers answers back to the users' Android device using the rest API once again. For example, when users ask "What does it mean when I dream about falling?",  a  JSON file will be delivered to the IBM Watson corpus. After the question is interpreted, it will deliver an answer to the users' Android device and show up on the interface. \\
+	We built a native mobile app which utilizes the Android operating system and will support Android Lollipop and up. In order to build our app we used Google's development suite Android Studio to both develop and test our app. Our mobile application is written using the standard  Java and XML languages. In addition, our mobile app establishes a connection to IBM Watson through IBM's REST API and then sends user questions as JSON objects to IBM Bluemix and receives responses as JSON objects as well. For example, when users ask "What does it mean when I dream about falling?",  a  JSON object will be delivered to the IBM Watson corpus. After the question is interpreted, it will deliver an answer as a JSON object to the users' Android device and be displayed for them to read. The question and answer API allows our user's the ability to take their dream in all its complexity and analyze symbols and moments within their dream to provide them a better understanding of their subconscious. \\
 
-	Our project is robust since dream interpretation is closely correlated to people's lives. Dreams are part of our subconscious. With this in mind, it can help you discover a part of you that you did not even know. With our Dream Catcher App, not only can you interpret your dreams, you can keep it for memories sake. Furthermore, you can share these mind-created stories to the world.  \\
-
-}
+	Our project is robust since dream interpretation is a complex analytical process. Our app allows people to discover a portion of themselves they did not even know. The Dream Catcher mobile application, not only allows users to interpret their dreams, but also log and record  their dreams in a journal format in order to have them or share them with others. This app allows a user to explore their own subconscious and psychology in order to have a more enriching life. \\
+	
+	}
 %\noindent \lipsum[1] % Dummy abstract text
 \noindent
 
@@ -125,9 +125,9 @@ Peirce Penney, (2008).
 
 
 \end{thebibliography}
-[3] \url{https://en.wikipedia.org/wiki/Dream_interpretation} \newline
-[4] \url{http://www.ibm.com/smarterplanet/us/en/ibmwatson/} \newline
-[5] \url{https://developer.android.com/guide/index.html} \newline
+[2] \url{https://en.wikipedia.org/wiki/Dream_interpretation} \newline
+[3] \url{http://www.ibm.com/smarterplanet/us/en/ibmwatson/} \newline
+[4] \url{https://developer.android.com/guide/index.html} \newline
 
 %----------------------------------------------------------------------------------------
 
