@@ -13,6 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.parse.ParseFile;
+import com.parse.ParseImageView;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -20,56 +26,37 @@ import java.util.Stack;
 /**
  * Created by milesrobicheaux on 10/16/15.
  */
-public class DreamAdapter extends ArrayAdapter<Dream> {
-    static Context context;
-    static int layoutResourceId;
-    //List<Dream> data = new Stack<>();
-    List<Dream> data = new ArrayList<Dream>();
-
-    public DreamAdapter(Context context, int layoutResourceId, List<Dream> data) {
-        super(context, layoutResourceId, data);
-        this.layoutResourceId = layoutResourceId;
-        this.context = context;
-        this.data = data;
-    }
-
-
-    public long getItemId(int position) {
-        return position;
+public class DreamAdapter extends ParseQueryAdapter<ParseObject>{
+    public DreamAdapter(Context context, final String username){
+        super(context, new ParseQueryAdapter.QueryFactory<ParseObject>(){
+            public ParseQuery create(){
+                ParseQuery query = new ParseQuery("DREAM");
+                //query.whereEqualTo("username", username); //username not yet linked to dreams on parse?
+                query.whereEqualTo("test", true); //just testing
+                //need to link dreams to users
+                return query;
+            }
+        });
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View row = convertView;
-        DreamHolder holder = null;
-
-        if(row == null)
-        {
-            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            //row.setMinimumHeight(200);
-            holder = new DreamHolder();
-            holder.dreamTitle = (TextView)row.findViewById(R.id.dreamTitle);
-            holder.dreamEntry = (TextView)row.findViewById(R.id.dreamEntry);
-
-            row.setTag(holder);
-        }
-        else
-        {
-            holder = (DreamHolder)row.getTag();
+    public View getItemView(ParseObject object, View v, ViewGroup parent){
+        //View row = convertView;
+        //DreamHolder holder = null;
+        if(v == null) {
+            v = View.inflate(getContext(), R.layout.dream_layout, null);
         }
 
-        Dream dream = data.get(position);
-        holder.dreamTitle.setText(dream.getTitle());
-        holder.dreamEntry.setText(dream.getEntry());
+        super.getItemView(object, v, parent);
 
-        return row;
+        // Add the title view
+        TextView titleTextView = (TextView) v.findViewById(R.id.dreamTitle);
+        titleTextView.setText(object.getString("DREAM_TITLE"));
+
+        //Add the entry view
+        TextView entryTextView = (TextView) v.findViewById(R.id.dreamEntry);
+        entryTextView.setText(object.getString("DREAM_ENTRY"));
+
+        return v;
     }
-
-    static class DreamHolder
-    {
-        TextView dreamTitle;
-        TextView dreamEntry;
-    }
-
 }

@@ -15,6 +15,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -34,63 +35,36 @@ public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
 
-    private List<Dream> dreamLog = new ArrayList<Dream>();
+    private ParseQueryAdapter<ParseObject> mainAdapter;
+    private DreamAdapter dreamAdapter;
+    private ListView listView;
     private String userName = "captaincrunch";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dream_view);
-//        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
 
-        ListView lv = (ListView) findViewById(R.id.dream_list);
+        mainAdapter = new ParseQueryAdapter<ParseObject>(this, "DREAM");
+        mainAdapter.setTextKey("DREAM_TITLE");
+        mainAdapter.setTextKey("DREAM_ENTRY");
 
-        //setSupportActionBar(mainToolbar);
-        //getSupportActionBar().setTitle("Dream Log");
+        //subclass of ParseQueryAdapter
+        dreamAdapter = new DreamAdapter(this, userName);
+
+        listView = (ListView) findViewById(R.id.dream_list);
+        //listView.setAdapter(mainAdapter); //this shows but only the entries
+        //mainAdapter.loadObjects();
+        listView.setAdapter(dreamAdapter); //nothing shows when using this?
+        dreamAdapter.loadObjects();
 
         //Get a instance off the app to pull the global username we are storing for this app user
-        DreamLink dreamLink = DreamLink.getInstance();
-
-        final DreamAdapter adp = new DreamAdapter(this, R.layout.item_layout, dreamLog);
-        lv.setAdapter(adp);
-
+        //DreamLink dreamLink = DreamLink.getInstance();
 
         //ParseQuery to pull all this user's dreams using the global username we pulled up there ^
-        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("DREAM");
-//        parseQuery.whereEqualTo("USER", userName);
-        parseQuery.findInBackground(new FindCallback<ParseObject>() {
-
-            //Error check for ParseQuery
-            @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    for (int i = 0; i<objects.size(); i++) {
-
-//                        Base case we setup to query from Parse take Dream objects from cloud and set
-//                        their values to a local Dream object we display in our ListView.
-//
-//                        In the future we to setup to query for specific Dream objects
-//
-                        Dream dreamObj = new Dream();
-                        dreamObj.setTitle(objects.get(i).get("USER_TITLE").toString());
-                        dreamObj.setEntry(objects.get(i).get("USER_ENTRY").toString());
-
-                        //Finally we add Dream objects into our Stack so we can pop them off one by one and display
-                        dreamLog.add(dreamObj);
-                        adp.notifyDataSetChanged();
-
-
-
-                        Log.d("score", "Retrieved " + objects.size() + " scores");
-                    }
-
-                } else {
-                    Log.d("score", "Error: " + e.getMessage());
-                }
-            }
-        });
-
-
+        //ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("DREAM");
+        //parseQuery.whereEqualTo("USER", userName);
 
 //        dreamLogLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -98,8 +72,5 @@ public class DreamLog extends Activity {
 //
 //            }
 //        });
-
     }
-
-
 }

@@ -30,7 +30,7 @@ public class DreamLink extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        Parse.enableLocalDatastore(this);
+        //Parse.enableLocalDatastore(this);
         Parse.initialize(this, "EZZtXXc6TYVQdpb4RqMCuRtvMT9TU35fnwBhygFP", "U2Mge5DRDu5Q3ZftP1Fi4Y5C8SICfMurNf3fCrRr");
 
 
