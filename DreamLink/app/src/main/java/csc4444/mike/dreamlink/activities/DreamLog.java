@@ -2,6 +2,7 @@ package csc4444.mike.dreamlink.activities;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -35,7 +37,7 @@ public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
 
-    private ParseQueryAdapter<ParseObject> mainAdapter;
+    //private ParseQueryAdapter<ParseObject> mainAdapter;
     private DreamAdapter dreamAdapter;
     private ListView listView;
     private String userName = "captaincrunch";
@@ -46,16 +48,9 @@ public class DreamLog extends Activity {
         setContentView(R.layout.dream_view);
         //ButterKnife.bind(this);
 
-        mainAdapter = new ParseQueryAdapter<ParseObject>(this, "DREAM");
-        mainAdapter.setTextKey("DREAM_TITLE");
-        mainAdapter.setTextKey("DREAM_ENTRY");
-
-        //subclass of ParseQueryAdapter
         dreamAdapter = new DreamAdapter(this, userName);
 
         listView = (ListView) findViewById(R.id.dream_list);
-        //listView.setAdapter(mainAdapter); //this shows but only the entries
-        //mainAdapter.loadObjects();
         listView.setAdapter(dreamAdapter); //nothing shows when using this?
         dreamAdapter.loadObjects();
 
@@ -66,11 +61,15 @@ public class DreamLog extends Activity {
         //ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("DREAM");
         //parseQuery.whereEqualTo("USER", userName);
 
-//        dreamLogLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//            }
-//        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //String item = parent.getItemAtPosition(position).toString();
+                //Toast.makeText(DreamLog.this, "CLICK: "+item, Toast.LENGTH_SHORT).show();
+                //below change RecordDream.class to whatever Dream Interpretation class that is made
+                Intent intent = new Intent(DreamLog.this, RecordDream.class);
+                startActivity(intent);
+            }
+        });
     }
 }
