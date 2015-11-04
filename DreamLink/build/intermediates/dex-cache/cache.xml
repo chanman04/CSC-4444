@@ -2,60 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.ibm.mobilefirstplatform.clientsdk.android/core/1.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-79b90a07cb6d7c2f43633169791e0e13e8efac6a.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-4631681d2645890b232819ea9ba57844a860633d.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1c1afa0ab2a8197a5da1b36c4167a9e479cb74d9">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-9e63c99a600089c83cce956c521f0e73c86c86ee.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-122b3eff22bffc43120f87cd5acf6297928b436b.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-5f6ba3dce789edb236b153a83a8af051293b2e95.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-8cd8079b29b56242930c50b45ccbdcfd86172adc.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/ParseCrashReporting-1.10.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0fe2cb2f4a1129a24249cef694cba6355ce97f25">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.10.1-df34430381e4b360f394c44915716881de4dd0a3.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-ef9b7780f397166f6d46931b8f6a76953c0ee6be.jar" />
+        sha1="e8b6879d91dcc5368cf1cdc6cd9599b246549fa1">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-e99e3f0bfbeda0b9d4f25e93fc22cf774bfa3ecb.jar" />
     </item>
     <item
         jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
@@ -65,95 +16,53 @@
         <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-58472ade7d2af7e76390e8c35c22c53e9332fa25.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-d559246ece3896efc977f2f76a1dbec06d572eb3.jar" />
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-fdfdb77b7160a7dbe7d1f5d959e6149fbff7d98f.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-79a7076168cc0945f13b86dfebd54926e8cf250e.jar" />
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-b2b3223ace5b0d404f6fc0ae60368c5000354614.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-188a64efeeac78603e6c256cb72765503b8b142a.jar" />
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-aeb7c6369a5bb3934d7188f6e5988dbcac7ae4f2.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-3cb7d178ae378b5d63550fb27d024dce9a750a01.jar" />
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-e16687cce6f326f03cc8b652aa4aa7fa27091883.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.0.1/e813b8722c387b22e1adccf7914729db09bcb4a9/httpcore-4.0.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-6b73b644d5e2ab286408b848e84469a0187742c3.jar" />
+        sha1="e813b8722c387b22e1adccf7914729db09bcb4a9">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/httpcore-4.0.1-005b2042191619663ff6a939d1f82e255f4a70ef.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-a8a5dbdc1a28ef4250dbe593039165c5e60d5342.jar" />
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-f52d3b22d048da37c10772a1e40216789b1f11bd.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-9454daf15b621eab28b9e823cf245551cfb25b80.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-5c6ef3be63b636530e0ebbcbbf044b9bc0053435.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/android-async-http-1.4.5.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.5-c1f11fd096c3fc4a3aba8351a479a9512c45c8e5.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-ccea346598880c4e314b3b18f109437080cc7145.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-0484e643ecbe3a7cc3e452850e8d36eda90a3912.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-0db81fde0add4cd6b2f11ed5e028075b98788205.jar" />
-    </item>
-    <item
-        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-8a0bfae465f539d62e5d65c907ea2d47d4da7986.jar" />
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/okhttp-2.4.0-cd3e2085ffa810ae3969c4302b555e1d6fce5eea.jar" />
     </item>
     <item
         jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/Parse-1.10.1.jar"
@@ -163,11 +72,18 @@
         <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/Parse-1.10.1-f64fc704d6e64b3f9c387d953b284e6f81bf12e8.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-b7733fd6470f24cc346c1c0d1143374a61f67384.jar" />
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-54c347056c8fd9a250cd971719bec67bcc766057.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/gson-2.3.1-0d843745a6a482c60ab105e803084372928009dd.jar" />
     </item>
     <item
         jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
@@ -177,32 +93,53 @@
         <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-060509e8da3773e47dda44a8c62a68a811543f45.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-5e6b91a73f0812489291b85b4e6d39a157cb567e.jar" />
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-4df7b69ac16ebbf0953c7e13716234e9eb6c6135.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-94e36d732b7f87830f22ed644fb452f501fade12.jar" />
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-344be4c44168c6d9c117379b859496362390de5c.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-84a96e1f9dfad0567fdaa6b0f12d51fa6d3c7f3f.jar" />
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-93ce6c2c3d64f569d8ed7270f5c0a2d32a2cf19c.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/ParseCrashReporting-1.10.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-8fb4676d15aa20d5e934ae5a91ddf041fe39cb3f.jar" />
+        sha1="0fe2cb2f4a1129a24249cef694cba6355ce97f25">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.10.1-df34430381e4b360f394c44915716881de4dd0a3.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-3ea82e386cb7271f73b127625bd14a69735ca41b.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-0cab8b9cc4f63fcabb21a0d405bbf6815d79e911.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-dccda42d32c9f557ce7c35e2d0037498b5511575.jar" />
     </item>
     <item
         jar="/Users/Mike/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
@@ -212,18 +149,32 @@
         <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-f22367944bd420390071ce38ce51329991926491.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/java-wrapper-1.1.1-jar-with-dependencies.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-bd56d5c1a7ccc505e7cd22a7f008024c15bfe46b.jar" />
+        sha1="00f0da0d1aa82741b900c90ef45c94c99ee31d3d">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/java-wrapper-1.1.1-jar-with-dependencies-5ada4313d46c66cb4fa3e3e0dbb05f1469682692.jar" />
     </item>
     <item
-        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-4e2f096a89e4ae15ec2b0456ad504fde857465a1.jar" />
+        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2-e09e67e56aaecbf17976b59fca83f86dee3962b1.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.4.0/5b72bf48563ea8410e650de14aa33ff69a3e8c35/okio-1.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/okio-1.4.0-ec67edb6b365a96eab3d1292932cbf11dba7af29.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-ef8643b793261e0141b068b7e0a03e50a8df0109.jar" />
     </item>
     <item
         jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/libs/ibmbluemix.jar"
@@ -231,6 +182,132 @@
         revision="22.0.1"
         sha1="4033a68dee2ff57770e15eb7179a4f658f48ff84">
         <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/ibmbluemix-5691235d822a000157e78733e7beaf101c539398.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-f76d0502e1c47570b6fd5422b86695f1a5a23e53.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-ccfdf1be57b52a4da907c64dac9767b7b2890e43.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-b4952fd8ed4e125d588f825c5ebd86d6e2072e48.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-csv/1.2/bfb42d67ff2e16c78c3c322f4fb7c73fbed1965c/commons-csv-1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bfb42d67ff2e16c78c3c322f4fb7c73fbed1965c">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/commons-csv-1.2-efc75b85328667b58332a6416b2bae8a343517df.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-20853bf0d995ce5f02a5b6988376ce6cc8b010c7.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-a2029411a1d95debc78223b9144e595abdc42e62.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-84a96e1f9dfad0567fdaa6b0f12d51fa6d3c7f3f.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-690421404ae0ae40cb1396aac4aed0ba3ee53373.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/java-wrapper/1.1.1/485fb6548bb3f1d35a154dd731e542b6d6f8a3c6/java-wrapper-1.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="485fb6548bb3f1d35a154dd731e542b6d6f8a3c6">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/java-wrapper-1.1.1-16683c408d3c2d3fafd04ddf65bbb2adcb1a0ec8.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.0.3/e3fa40a58c124132d63a7184075520f7eb3c09cd/httpmime-4.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e3fa40a58c124132d63a7184075520f7eb3c09cd">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/httpmime-4.0.3-3f66e371d80cd3965cdb3997041648590ada5c06.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-c0a88147e1771f7e0e0c2a89a3628f42a3d22a09.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/org.apache.james/apache-mime4j/0.6/945007627e8d12275d755081a9e609c018e1210d/apache-mime4j-0.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="945007627e8d12275d755081a9e609c018e1210d">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/apache-mime4j-0.6-813683ebe539e0cd64c503884b4d26b7d3a1094e.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-0cf3911fddfc1c06eaa5f96e139f1200c3677562.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1c1afa0ab2a8197a5da1b36c4167a9e479cb74d9">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-9e63c99a600089c83cce956c521f0e73c86c86ee.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-8a0bfae465f539d62e5d65c907ea2d47d4da7986.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-5a53172fdcede8fe7479fda6834b7e7ea24bc2b3.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-df0a4080ce51fba7cdb73992a4dc16c1f342846b.jar" />
+    </item>
+    <item
+        jar="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/pre-dexed/debug/classes-4ff8876d0d8804af55e653afe6bfc0891e28fa47.jar" />
     </item>
 
 </items>

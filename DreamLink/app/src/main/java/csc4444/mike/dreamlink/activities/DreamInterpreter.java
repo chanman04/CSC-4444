@@ -59,8 +59,6 @@ public class DreamInterpreter extends Activity{
         setContentView(R.layout.activity_dream_interpreter);
         ButterKnife.bind(this);
 
-
-
         submitQuestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,8 +94,6 @@ public class DreamInterpreter extends Activity{
                         Toast.makeText(DreamInterpreter.this, "Your question was submitted", Toast.LENGTH_SHORT).show();
 
                     }
-
-
 
                 }
                 catch(Exception e){

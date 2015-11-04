@@ -1,11 +1,9 @@
 package csc4444.mike.dreamlink.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -14,24 +12,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-
-import com.ibm.mobile.services.core.IBMBluemix;
-import com.ibm.mobilefirstplatform.clientsdk.android.core.api.BMSClient;
-import com.ibm.mobilefirstplatform.clientsdk.android.core.api.Response;
-import com.ibm.mobilefirstplatform.clientsdk.android.core.api.ResponseListener;
-import com.ibm.mobilefirstplatform.clientsdk.android.core.api.Request;
-
-import org.json.JSONObject;
-
-import java.net.MalformedURLException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import csc4444.mike.dreamlink.R;
 
-public class MainActivity extends Activity implements ResponseListener {
+public class MainActivity extends Activity {
 
 
     @Bind(R.id.toolbar)
@@ -54,19 +40,16 @@ public class MainActivity extends Activity implements ResponseListener {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        IBMBluemix.initialize(this.getApplicationContext(),bluemixAppGUID,"7kozH9C8QTyuPZzZFv7LEg",bluemixAppRoute);
-
-        try {
-            //initialize SDK with IBM Bluemix application ID and route
-            //TODO: Please replace <APPLICATION_ROUTE> with a valid ApplicationRoute and <APPLICATION_ID> with a valid ApplicationId
-            BMSClient.getInstance().initialize(this, bluemixAppRoute, bluemixAppRoute);
-            Toast.makeText(this, "IBM authentication worked finally", Toast.LENGTH_SHORT);
-
-        }
-        catch (MalformedURLException mue) {
-
-            Toast.makeText(this,"There is a problem with your IBM authentication bro",Toast.LENGTH_SHORT);
-        }
+//        try {
+//            //initialize SDK with IBM Bluemix application ID and route
+//            BMSClient.getInstance().initialize(this, bluemixAppRoute, bluemixAppGUID);
+//            Toast.makeText(this, "IBM authentication worked finally", Toast.LENGTH_SHORT);
+//
+//        }
+//        catch (MalformedURLException mue) {
+//
+//            Toast.makeText(this,"There is a problem with your IBM authentication bro",Toast.LENGTH_SHORT);
+//        }
 
 
         mainToolbar.getResources().getColor(R.color.primarycolor);
@@ -119,15 +102,15 @@ public class MainActivity extends Activity implements ResponseListener {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onSuccess(Response response) {
-
-    }
-
-    @Override
-    public void onFailure(Response response, Throwable throwable, JSONObject jsonObject) {
-
-    }
+//    @Override
+//    public void onSuccess(Response response) {
+//
+//    }
+//
+//    @Override
+//    public void onFailure(Response response, Throwable throwable, JSONObject jsonObject) {
+//
+//    }
 
     private class NavDrawerListener implements android.widget.AdapterView.OnItemClickListener {
         @Override
