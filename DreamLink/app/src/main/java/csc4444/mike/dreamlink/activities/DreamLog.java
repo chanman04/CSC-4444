@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,9 +38,10 @@ public class DreamLog extends Activity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
 
-    //private ParseQueryAdapter<ParseObject> mainAdapter;
     private DreamAdapter dreamAdapter;
     private ListView listView;
+    private Button createDreamButton;
+
     private String userName = "captaincrunch";
 
     @Override
@@ -49,10 +51,14 @@ public class DreamLog extends Activity {
         //ButterKnife.bind(this);
 
         dreamAdapter = new DreamAdapter(this, userName);
+        //dreamFragment = new DreamFragment();
+        //dreamFragment.setArguments(???);
 
         listView = (ListView) findViewById(R.id.dream_list);
-        listView.setAdapter(dreamAdapter); //nothing shows when using this?
+        listView.setAdapter(dreamAdapter);
         dreamAdapter.loadObjects();
+
+        //createDreamButton = (Button) findViewById(R.id.create_dream_button);
 
         //Get a instance off the app to pull the global username we are storing for this app user
         //DreamLink dreamLink = DreamLink.getInstance();
@@ -64,12 +70,28 @@ public class DreamLog extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //String item = parent.getItemAtPosition(position).toString();
-                //Toast.makeText(DreamLog.this, "CLICK: "+item, Toast.LENGTH_SHORT).show();
+                //String item = (String) parent.getItemAtPosition(position); this doesnt work
+                //String item = dreamAdapter.getItem(position).toString();
+                //Toast.makeText(DreamLog.this, "CLICK: "+item, Toast.LENGTH_SHORT).show(); //how to get actual object values and stuff?
                 //below change RecordDream.class to whatever Dream Interpretation class that is made
-                Intent intent = new Intent(DreamLog.this, RecordDream.class);
+
+                String parseObjectId = dreamAdapter.getItem(position).getObjectId();
+
+                Intent intent = new Intent(DreamLog.this, DreamInterpreter.class);
+                intent.putExtra("parse_obj_id", parseObjectId);
                 startActivity(intent);
+
+                //or just switch adapter to new layout? what do?
             }
         });
+
+        /*createDreamButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(DreamLog.this, RecordDream.class);
+                intent2.putExtra("userName", userName);
+                startActivity(intent2);
+            }
+        });*/
     }
 }

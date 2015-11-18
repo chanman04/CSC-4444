@@ -27,13 +27,12 @@ import java.util.Stack;
  * Created by milesrobicheaux on 10/16/15.
  */
 public class DreamAdapter extends ParseQueryAdapter<ParseObject>{
-    public DreamAdapter(Context context, final String username){
+    public DreamAdapter(Context context, final String userName){
         super(context, new ParseQueryAdapter.QueryFactory<ParseObject>(){
             public ParseQuery create(){
                 ParseQuery query = new ParseQuery("DREAM");
-                //query.whereEqualTo("username", username); //username not yet linked to dreams on parse?
-                query.whereEqualTo("test", true); //just testing
-                //need to link dreams to users
+                //query.whereEqualTo("USER", userName); //username not yet linked to dreams on parse?
+                query.whereEqualTo("test", true);
                 return query;
             }
         });
@@ -41,8 +40,6 @@ public class DreamAdapter extends ParseQueryAdapter<ParseObject>{
 
     @Override
     public View getItemView(ParseObject object, View v, ViewGroup parent){
-        //View row = convertView;
-        //DreamHolder holder = null;
         if(v == null) {
             v = View.inflate(getContext(), R.layout.dream_layout, null);
         }
