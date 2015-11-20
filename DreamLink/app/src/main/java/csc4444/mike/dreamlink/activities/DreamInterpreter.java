@@ -1,29 +1,38 @@
 package csc4444.mike.dreamlink.activities;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ibm.watson.developer_cloud.question_and_answer.v1.QuestionAndAnswer;
-import com.ibm.watson.developer_cloud.question_and_answer.v1.model.WatsonAnswer;
-import com.ibm.watson.developer_cloud.service.WatsonService;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.net.HttpURLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import csc4444.mike.dreamlink.R;
-
-
-
 
 
 /**
@@ -36,76 +45,276 @@ import csc4444.mike.dreamlink.R;
  */
 public class DreamInterpreter extends Activity{
 
-
-
-    @Bind(R.id.toolbar) Toolbar mainToolbar;
-    @Bind(R.id.question_field) EditText questionET;
-    @Bind(R.id.answer_field) TextView answerTV;
-    @Bind(R.id.submit_quest_button) Button submitQuestButton;
-
-
-
-    //Save the IBM Question and Answer username and password to access the service
-    private final String username = "e0135a85-6fc6-4703-ae61-daf5170aee1a";
-    private final String password = "zpAgWm05ktz0X";
+    @Bind(R.id.watson_submit_button) Button watsonSubmit;
 
     //String to store the EditText input
     public String questionText;
     public String answerText;
 
+
+    public static final String mLogTag = "Inside WatsonQueryActivity: ";
+    public static String mWatsonQueryString = "";
+    public String mWatsonAnswerString = "";
+    private boolean mIsQuerying = false;
+
+
+    static interface WatsonQueryCallbacks {
+        void onPreExecute();
+        void onProgressUpdate(int percent);
+        void onCancelled();
+        void onPostExecute();
+    }
+
+    private DreamInterpreter mCallbacks;
+    private WatsonQuery mQuery;
+
+    public DreamInterpreter() {
+    }
+
+
+//    @Override
+//    public void onAttach(Activity activity) {
+//        super.onAttach(activity);
+//        mCallbacks = (DreamInterpreter) activity;
+//    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        setRetainInstance(true);
         setContentView(R.layout.activity_dream_interpreter);
         ButterKnife.bind(this);
 
-        submitQuestButton.setOnClickListener(new View.OnClickListener() {
+        if(mWatsonAnswerString.length() > 0) {
+            TextView watsonQuestion = (TextView) findViewById(R.id.watson_answer_text);
+            watsonQuestion.setText(mWatsonAnswerString);
+        }
+
+        // event binding for submit button
+        watsonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                try{
-                    if(questionET.getText() == null){
-
-                        questionET.setError("You cannot leave the question field blank");
+                if(!mIsQuerying) {
+                    mIsQuerying = true;
+                    EditText watsonQuestion = (EditText) findViewById(R.id.watson_question_text);
+                    if(watsonQuestion.getText() != null) {
+                        mWatsonQueryString = watsonQuestion.getText().toString();
                     }
-                    else{
-
-                        /*
-                        Here we take the text from the EditText turn it into a Watson Question and
-                        returns a Watson Answer that we parse to a string and display in a TextView.
-                        Very close to having it working just need some small tweaks. Like so -->
-
-                        QuestionAndAnswer service = new QuestionAndAnswer();
-                        service.setUsernameAndPassword("<username>", "<password>");
-                        service.setDataset(QuestionAndAnswerDataset.HEALTHCARE);
-                        WatsonAnswer watsonAnswers = service.ask("What is HIV?");
-                        System.out.println(watsonAnswers);
-
-                         */
-                        questionText = questionET.getText().toString();
-                        QuestionAndAnswer service = new QuestionAndAnswer();
-                        service.setUsernameAndPassword(username, password);
-//                        service.setDataset("DREAMS");
-                        WatsonAnswer watsonAnswer = service.ask(questionText);
-                        answerText = watsonAnswer.toString();
-//                        answerTV.getText(answerText.toString());
-
-                        //Temporary toast so I know all of the parsing of the text and sending it worked
-                        Toast.makeText(DreamInterpreter.this, "Your question was submitted", Toast.LENGTH_SHORT).show();
-
-                    }
-
+                    mQuery = new WatsonQuery();
+                    mQuery.execute();
                 }
-                catch(Exception e){
-
-                    e.printStackTrace();
-                    Toast.makeText(DreamInterpreter.this, "There was a error recording your dream", Toast.LENGTH_SHORT).show();
-                    return;
-
-                }
+//                hideSoftKeyboard(this);
             }
         });
 
+        // hide keyboard when clicking off text edit element
+        findViewById(R.id.rootLayout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                hideSoftKeyboard(this);
+            }
+        });
+
+        findViewById(R.id.rootLayout).requestFocus();
     }
 
-}
+        //End of onCreate
+
+    private class WatsonQuery extends AsyncTask<Void, Integer, String> {
+
+        private SSLContext context;
+        private HttpsURLConnection connection;
+        private String jsonData;
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected String doInBackground(Void... ignore) {
+
+            // establish SSL trust (insecure for demo)
+            try {
+                context = SSLContext.getInstance("TLS");
+                context.init(null, trustAllCerts, new java.security.SecureRandom());
+            } catch (java.security.KeyManagementException e) {
+                e.printStackTrace();
+            } catch (java.security.NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                // Default HTTPS connection option values
+                StringBuilder sb = new StringBuilder();
+                sb.append("");
+                sb.append(R.string.user_watson_server_instance);
+                String serverInstance = sb.toString();
+
+                StringBuilder sbUser = new StringBuilder();
+                sb.append("");
+                sb.append(R.string.user_id);
+                String userInstance = sb.toString();
+
+                StringBuilder sbPass = new StringBuilder();
+                sb.append("");
+                sb.append(R.string.user_password);
+                String passwordInstance = sb.toString();
+
+                URL watsonURL = new URL(serverInstance);
+                int timeoutConnection = 30000;
+                connection = (HttpsURLConnection) watsonURL.openConnection();
+                connection.setSSLSocketFactory(context.getSocketFactory());
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                connection.setUseCaches(false);
+                connection.setConnectTimeout(timeoutConnection);
+                connection.setReadTimeout(timeoutConnection);
+
+                // Watson specific HTTP headers
+                connection.setRequestProperty("X-SyncTimeout", "30");
+                connection.setRequestProperty("Accept", "application/json");
+                connection.setRequestProperty("Authorization", "Basic " +userInstance + passwordInstance);
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setRequestProperty("Cache-Control", "no-cache");
+
+                OutputStream out = connection.getOutputStream();
+                String query = "{\"question\": {\"questionText\": \"" + DreamInterpreter.mWatsonQueryString + "\"}}";
+                out.write(query.getBytes());
+                out.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            int responseCode;
+            try {
+                if (connection != null) {
+                    responseCode = connection.getResponseCode();
+                    Log.i(DreamInterpreter.mLogTag, "Server Response Code: " + Integer.toString(responseCode));
+
+                    switch(responseCode) {
+                        case 200:
+                            // successful HTTP response state
+                            InputStream input = connection.getInputStream();
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                            String line;
+                            StringBuilder response = new StringBuilder();
+                            while((line = reader.readLine()) != null) {
+                                response.append(line);
+                                response.append('\r');
+                            }
+                            reader.close();
+
+                            Log.i(DreamInterpreter.mLogTag, "Watson Output: " + response.toString());
+                            jsonData = response.toString();
+
+                            break;
+                        default:
+                            // Do Stuff
+                            break;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            // received data, deliver JSON to PostExecute
+            if(jsonData != null) {
+                return jsonData;
+            }
+
+            // else, hit HTTP error, handle in PostExecute by doing null check
+            return null;
+        }
+
+//        @Override
+//        protected void onProgressUpdate(Integer... percent) {
+//            if (mCallbacks != null) {
+//                mCallbacks.onProgressUpdate(percent[0]);
+//            }
+//        }
+//
+//        @Override
+//        protected void onCancelled() {
+//            if (mCallbacks != null) {
+//                mCallbacks.onCancelled();
+//            }
+//        }
+
+        @Override
+        protected void onPostExecute(String json) {
+//            mIsQuerying = false;
+//            if (mCallbacks != null) {
+//                mCallbacks.onPostExecute();
+//            }
+
+
+            try {
+                if(json != null) {
+                    JSONObject watsonResponse = new JSONObject(json);
+                    JSONObject question = watsonResponse.getJSONObject("question");
+                    JSONArray evidenceArray = question.getJSONArray("evidencelist");
+                    JSONObject mostLikelyValue = evidenceArray.getJSONObject(0);
+                    DreamInterpreter dreamInt = new DreamInterpreter();
+                    TextView answerText = (TextView) dreamInt.findViewById(R.id.watson_answer_text);
+                    String mWatsonAnswerString = "";
+                    mWatsonAnswerString = mostLikelyValue.get("text").toString();
+                    answerText.setText(mWatsonAnswerString);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                // No valid answern
+                printTryDifferentQuestion();
+            }
+        }
+
+        /*
+         *  Accepts all HTTPS certs. Do NOT use in production!!!
+         */
+        TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
+            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                return new java.security.cert.X509Certificate[] {};
+            }
+
+            public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+            }
+
+            public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+            }
+
+        }};
+
+        //End of WatsonQuery
+    }
+
+
+    private void printTryDifferentQuestion() {
+        DreamInterpreter dreamInt = new DreamInterpreter();
+        TextView textView = (TextView) dreamInt.findViewById(R.id.watson_answer_text);
+        textView.setText("Please try a different question.");
+    }
+
+    private String getEncodedValues(String user_id, String user_password) {
+        String textToEncode = user_id + ":" + user_password;
+        byte[] data = null;
+        try {
+            data = textToEncode.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String base64 = Base64.encodeToString(data, Base64.DEFAULT);
+        return base64;
+    }
+
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if(activity.getCurrentFocus() != null) {
+            inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+            }
+        }
+
+ //End of class
+    }
+
