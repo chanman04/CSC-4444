@@ -150,17 +150,18 @@ public class DreamInterpreter extends Activity{
                 StringBuilder sb = new StringBuilder();
                 sb.append("");
                 sb.append(R.string.user_watson_server_instance);
-                String serverInstance = sb.toString();
+//                String serverInstance = sb.toString();
 
                 StringBuilder sbUser = new StringBuilder();
                 sb.append("");
                 sb.append(R.string.user_id);
-                String userInstance = sb.toString();
+//                String userInstance = sb.toString();
 
-                StringBuilder sbPass = new StringBuilder();
-                sb.append("");
-                sb.append(R.string.user_password);
-                String passwordInstance = sb.toString();
+
+                String serverInstance = getString(R.string.user_watson_server_instance);
+                String userInstance = getString(R.string.user_id);
+                String passwordInstance = getString(R.string.user_password);
+
 
                 URL watsonURL = new URL(serverInstance);
                 int timeoutConnection = 30000;
@@ -175,7 +176,7 @@ public class DreamInterpreter extends Activity{
                 // Watson specific HTTP headers
                 connection.setRequestProperty("X-SyncTimeout", "30");
                 connection.setRequestProperty("Accept", "application/json");
-                connection.setRequestProperty("Authorization", "Basic " +userInstance + passwordInstance);
+                connection.setRequestProperty("Authorization", "Basic " +getEncodedValues(userInstance, passwordInstance));
                 connection.setRequestProperty("Content-Type", "application/json");
                 connection.setRequestProperty("Cache-Control", "no-cache");
 
@@ -192,7 +193,9 @@ public class DreamInterpreter extends Activity{
             try {
                 if (connection != null) {
                     responseCode = connection.getResponseCode();
-                    Log.i(DreamInterpreter.mLogTag, "Server Response Code: " + Integer.toString(responseCode));
+                    Log.i(mLogTag, "Server Response Code: " + Integer.toString(responseCode));
+
+                     String mLogTag = "Inside WatsonQueryActivity: ";
 
                     switch(responseCode) {
                         case 200:
@@ -207,7 +210,7 @@ public class DreamInterpreter extends Activity{
                             }
                             reader.close();
 
-                            Log.i(DreamInterpreter.mLogTag, "Watson Output: " + response.toString());
+                            Log.i(mLogTag, "Watson Output: " + response.toString());
                             jsonData = response.toString();
 
                             break;
