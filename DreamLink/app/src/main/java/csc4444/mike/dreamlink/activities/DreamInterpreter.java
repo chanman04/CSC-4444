@@ -46,6 +46,9 @@ import csc4444.mike.dreamlink.R;
 public class DreamInterpreter extends Activity{
 
     @Bind(R.id.watson_submit_button) Button watsonSubmit;
+    @Bind(R.id.watson_answer_text) TextView watsonAnswer;
+
+
 
     //String to store the EditText input
     public String questionText;
@@ -193,9 +196,10 @@ public class DreamInterpreter extends Activity{
             try {
                 if (connection != null) {
                     responseCode = connection.getResponseCode();
+                    String mLogTag = "Inside WatsonQueryActivity: ";
+
                     Log.i(mLogTag, "Server Response Code: " + Integer.toString(responseCode));
 
-                     String mLogTag = "Inside WatsonQueryActivity: ";
 
                     switch(responseCode) {
                         case 200:
@@ -256,15 +260,14 @@ public class DreamInterpreter extends Activity{
 
             try {
                 if(json != null) {
+                    String mWatsonAnswerString = "";
                     JSONObject watsonResponse = new JSONObject(json);
                     JSONObject question = watsonResponse.getJSONObject("question");
                     JSONArray evidenceArray = question.getJSONArray("evidencelist");
                     JSONObject mostLikelyValue = evidenceArray.getJSONObject(0);
                     DreamInterpreter dreamInt = new DreamInterpreter();
-                    TextView answerText = (TextView) dreamInt.findViewById(R.id.watson_answer_text);
-                    String mWatsonAnswerString = "";
                     mWatsonAnswerString = mostLikelyValue.get("text").toString();
-                    answerText.setText(mWatsonAnswerString);
+                    watsonAnswer.setText(mWatsonAnswerString);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
