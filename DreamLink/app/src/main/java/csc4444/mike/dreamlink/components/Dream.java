@@ -10,23 +10,24 @@ public class Dream {
 
 
     public Dream(){
-
+        super();
     }
-    public Dream(String title, String entry){
-        this.dreamTitle = title;
-        this.dreamEntry = entry;
+    public Dream(String dreamTitle, String dreamEntry){
+
+        this.dreamTitle = dreamTitle;
+        this.dreamEntry = dreamEntry;
     }
     public String getTitle(){
         return dreamTitle;
     }
     public String getEntry(){
-        return dreamTitle;
+        return dreamEntry;
     }
-    public void setTitle(String title){
-        this.dreamTitle = title;
+    public void setTitle(String dreamTitle){
+        this.dreamTitle = dreamTitle;
     }
-    public void setEntry(String entry){
-        this.dreamEntry = entry;
+    public void setEntry(String dreamEntry){
+        this.dreamEntry = dreamEntry;
     }
 
 }
