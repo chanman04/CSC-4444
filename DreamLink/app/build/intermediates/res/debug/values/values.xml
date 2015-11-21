@@ -118,7 +118,7 @@
     <color name="material_deep_teal_500">#ff009688</color>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/src/main/res/values/color.xml -->
     <eat-comment/>
-    <color name="primary_dark">#04557d</color>
+    <color name="primary_dark">#737499</color>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
@@ -141,7 +141,7 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/src/main/res/values/color.xml -->
     <eat-comment/>
-    <color name="primarycolor">#067AB4</color>
+    <color name="primarycolor">#C0C2FF</color>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
