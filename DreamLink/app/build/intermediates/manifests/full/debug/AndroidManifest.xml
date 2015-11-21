@@ -43,11 +43,11 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-<<<<<<< HEAD
             android:name="csc4444.mike.dreamlink.activities.DreamInterpreter"
-=======
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="csc4444.mike.dreamlink.activities.DreamLog"
->>>>>>> ecd90065fc568bc787c4c11c0d2ecf55b546035c
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -24,7 +24,6 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartir con %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
-<<<<<<< HEAD
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/values-es/values-es.xml -->
     <eat-comment/>
     <string name="com_facebook_image_download_unknown_error">Se produjo un error inesperado al descargar una imagen.</string>
@@ -95,8 +94,6 @@
     <string name="com_parse_ui_twitter_login_failed_toast">Ha fallado el inicio de sesión con Twitter</string>
     <string name="com_parse_ui_username_input_hint">Usuario</string>
     <string name="com_parse_ui_username_taken_toast">El usuario ya está uso, por favor escribe otro</string>
-=======
->>>>>>> ecd90065fc568bc787c4c11c0d2ecf55b546035c
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values-es/common_strings.xml -->
     <eat-comment/>
     <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> necesita que la aplicación Android Wear se actualice."</string>
@@ -131,6 +128,9 @@
     <string msgid="411506735369601515" name="common_open_on_phone">"Abrir en teléfono"</string>
     <string msgid="9071884888741449141" name="common_signin_button_text">"Iniciar sesión"</string>
     <string msgid="2429381841831957106" name="common_signin_button_text_long">"Iniciar sesión con Google"</string>
+    <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/values-es/values-es.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">Enviar</string>
     <!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/res/values-es/values.xml -->
     <eat-comment/>
     <string msgid="8327680881775995150" name="mr_media_route_button_content_description">"Enviar contenido"</string>

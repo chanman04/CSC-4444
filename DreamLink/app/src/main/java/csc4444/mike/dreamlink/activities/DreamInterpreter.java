@@ -17,6 +17,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,9 +56,12 @@ import csc4444.mike.dreamlink.R;
  */
 public class DreamInterpreter extends Activity{
 
+
     @Bind(R.id.watson_submit_button) Button watsonSubmit;
     @Bind(R.id.watson_answer_text) TextView watsonAnswer;
 
+    private  TextView dreamTitle;
+    private TextView dreamEntry;
 
 
     //String to store the EditText input
@@ -94,6 +102,24 @@ public class DreamInterpreter extends Activity{
 //        setRetainInstance(true);
         setContentView(R.layout.activity_dream_interpreter);
         ButterKnife.bind(this);
+
+        dreamTitle = (TextView) findViewById(R.id.dream_title);
+        dreamEntry = (TextView) findViewById(R.id.dream_entry);
+
+        String parseObjId = getIntent().getStringExtra("parse_obj_id");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("DREAM"); //which query to pull here?
+        query.getInBackground(parseObjId, new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject item, ParseException e) {
+                if (e == null) {
+                    // item was found
+                    dreamTitle.setText(item.getString("DREAM_TITLE"));
+                    dreamEntry.setText(item.getString("DREAM_ENTRY"));
+                } else {
+                    Toast.makeText(DreamInterpreter.this, "FAILED TO RETRIEVE DREAM", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         if(mWatsonAnswerString.length() > 0) {
             TextView watsonQuestion = (TextView) findViewById(R.id.watson_answer_text);

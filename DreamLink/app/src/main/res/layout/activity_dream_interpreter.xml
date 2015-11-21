@@ -28,10 +28,32 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.ibm.watson.WatsonPhotographyAndroid.MainActivity$PlaceholderFragment">
 
+
+        <!--Not sure how I need to get the dream's title and entry above the Watson ImageView -->
+        <!--<TextView-->
+            <!--android:id="@+id/dream_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="16sp"-->
+            <!--android:layout_centerHorizontal="true" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/dream_entry"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/dream_title"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textSize="12sp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"/>-->
+
+
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/watson_logo"
+            android:layout_below="@+id/dream_entry"
             android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
