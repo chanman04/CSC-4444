@@ -21,6 +21,7 @@
 
     <EditText
         android:id="@+id/dream_title_ET"
+        android:background="@drawable/border_edittext"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -37,6 +38,7 @@
 
     <EditText
         android:id="@+id/dream_ET"
+        android:background="@drawable/border_edittext"
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
@@ -46,24 +48,24 @@
         android:layout_weight="0.42"
         android:hint="Dream goes here"/>
 
-    <TextView
-        android:id="@+id/text_hashtag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="#hashtag Your Dream"
-        android:paddingTop="20sp"
-        android:layout_gravity="center_horizontal" />
+    <!--<TextView-->
+        <!--android:id="@+id/text_hashtag"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:text="#hashtag Your Dream"-->
+        <!--android:paddingTop="20sp"-->
+        <!--android:layout_gravity="center_horizontal" />-->
 
-    <EditText
-        android:id="@+id/hashtags_ET"
-        android:layout_width="350sp"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.12"
-        android:hint="#hashtags...."/>
+    <!--<EditText-->
+        <!--android:id="@+id/hashtags_ET"-->
+        <!--android:layout_width="350sp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textMultiLine"-->
+        <!--android:ems="10"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_weight="0.12"-->
+        <!--android:hint="#hashtags...."/>-->
 
     <Button
         android:id="@+id/submit_dream_button"

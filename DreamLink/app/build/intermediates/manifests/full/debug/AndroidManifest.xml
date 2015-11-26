@@ -41,6 +41,11 @@
         <activity
             android:name="csc4444.mike.dreamlink.activities.RecordDream"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="csc4444.mike.dreamlink.activities.DreamInterpreter"
@@ -49,11 +54,14 @@
         <activity
             android:name="csc4444.mike.dreamlink.activities.DreamLog"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name="csc4444.mike.dreamlink.activities.DreamDictionary"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="csc4444.mike.dreamlink.activities.DreamTerm"
+            android:label="@string/app_name" >
         </activity>
 
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->

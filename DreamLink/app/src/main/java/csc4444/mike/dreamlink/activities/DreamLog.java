@@ -1,44 +1,26 @@
 package csc4444.mike.dreamlink.activities;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.TextView;
-
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseQueryAdapter;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import csc4444.mike.dreamlink.DreamLink;
 import csc4444.mike.dreamlink.R;
-import csc4444.mike.dreamlink.components.Dream;
+import csc4444.mike.dreamlink.adapters.DreamAdapter;
 
 /**
  * Created by Mike on 10/1/15.
  */
-public class DreamLog extends Activity {
+public class DreamLog extends ActionBarActivity {
 
     @Bind(R.id.toolbar) Toolbar mainToolbar;
-    @Bind(R.id.dream_log_LV) ListView dreamLogLV;
 
     private DreamAdapter dreamAdapter;
     private ListView listView;
@@ -50,11 +32,13 @@ public class DreamLog extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dream_view);
-        //ButterKnife.bind(this);
+        ButterKnife.bind(this);
+
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Your Dream Entries");
 
         dreamAdapter = new DreamAdapter(this, userName);
-        //dreamFragment = new DreamFragment();
-        //dreamFragment.setArguments(???);
+
 
         listView = (ListView) findViewById(R.id.dream_list);
         listView.setAdapter(dreamAdapter);

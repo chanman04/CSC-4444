@@ -15,7 +15,6 @@
         <activity
             android:name=".activities.SignupActivity"
             android:label="@string/app_name" >
-
         </activity>
 
         <activity
@@ -26,24 +25,31 @@
         <activity
             android:name=".activities.RecordDream"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".activities.DreamInterpreter"
             android:label="@string/app_name" >
-
-
         </activity>
 
 
         <activity
             android:name=".activities.DreamLog"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".activities.DreamDictionary"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".activities.DreamTerm"
+            android:label="@string/app_name" >
         </activity>
 
 

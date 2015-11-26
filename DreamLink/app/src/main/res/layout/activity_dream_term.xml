@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar">
+
+    </include>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+    android:id="@+id/dream_term"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_centerHorizontal="true" />
+
+    <TextView
+    android:id="@+id/dream_meaning"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/dream_title"
+    android:layout_centerHorizontal="true"
+    android:textSize="12sp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

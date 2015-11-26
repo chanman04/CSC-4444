@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -58,33 +59,33 @@ public class SignupActivity extends ActionBarActivity{
 
                 createParseUser(userField, passwordField, emailField);
 
-//                user.signUpInBackground(new SignUpCallback() {
-//
-//                    @Override
-//                    public void done(ParseException e) {
-//
-//                        if (e == null){
-//                            Intent feedIntent = new Intent(SignupActivity.this, DreamFeed.class);
-//                            startActivity(feedIntent);
-//                            finish();
-//
-//                        }else{
-//                            switch(e.getCode()){
-//                                case ParseException.USERNAME_MISSING:
-//                                    usernameET.setError("You must supply a username");
-//                                    break;
-//                                case ParseException.PASSWORD_MISSING:
-//                                    passwordET.setError("You must supply a password");
-//                                    break;
-//                                case ParseException.EMAIL_MISSING:
-//                                    emailET.setError("You must supply a email address");
-//                                    break;
-//                            }
-//
-//                        }
-//
-//                    }
-//                });
+                user.signUpInBackground(new SignUpCallback() {
+
+                    @Override
+                    public void done(ParseException e) {
+
+                        if (e == null){
+                            Intent feedIntent = new Intent(SignupActivity.this, DreamLog.class);
+                            startActivity(feedIntent);
+                            finish();
+
+                        }else{
+                            switch(e.getCode()){
+                                case ParseException.USERNAME_MISSING:
+                                    usernameET.setError("You must supply a username");
+                                    break;
+                                case ParseException.PASSWORD_MISSING:
+                                    passwordET.setError("You must supply a password");
+                                    break;
+                                case ParseException.EMAIL_MISSING:
+                                    emailET.setError("You must supply a email address");
+                                    break;
+                            }
+
+                        }
+
+                    }
+                });
 
             }
         });
@@ -118,7 +119,7 @@ public class SignupActivity extends ActionBarActivity{
                     startActivity(feedIntent);
 
                 } else {
-                    Toast.makeText(SignupActivity.this, "Parse didn't get yo shit!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "Sorry your signup failed", Toast.LENGTH_SHORT).show();
 
                 }
             }

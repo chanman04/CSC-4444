@@ -130,6 +130,14 @@ public class MainActivity extends Activity {
                     Intent logNavIntent = new Intent(MainActivity.this, DreamLog.class);
                     startActivity(logNavIntent);
                     break;
+                case 3:
+                    Intent interpretDreamNavIntent = new Intent(MainActivity.this, DreamInterpreter.class);
+                    startActivity(interpretDreamNavIntent);
+                    break;
+                case 4:
+                    Intent dreamDictionaryNavIntent = new Intent(MainActivity.this, DreamDictionary.class);
+                    startActivity(dreamDictionaryNavIntent);
+                    break;
 
                 default:
             }

@@ -3,6 +3,7 @@ package csc4444.mike.dreamlink.activities;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -54,9 +55,9 @@ import csc4444.mike.dreamlink.R;
  * send a JSON object back. This JSON object that is sent back will be parsed into text and displayed
  * in a Text View.
  */
-public class DreamInterpreter extends Activity{
+public class DreamInterpreter extends ActionBarActivity{
 
-
+    @Bind(R.id.toolbar) Toolbar mainToolbar;
     @Bind(R.id.watson_submit_button) Button watsonSubmit;
     @Bind(R.id.watson_answer_text) TextView watsonAnswer;
 
@@ -103,23 +104,26 @@ public class DreamInterpreter extends Activity{
         setContentView(R.layout.activity_dream_interpreter);
         ButterKnife.bind(this);
 
-        dreamTitle = (TextView) findViewById(R.id.dream_title);
-        dreamEntry = (TextView) findViewById(R.id.dream_entry);
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Interpret Your Dreams");
 
-        String parseObjId = getIntent().getStringExtra("parse_obj_id");
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("DREAM"); //which query to pull here?
-        query.getInBackground(parseObjId, new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject item, ParseException e) {
-                if (e == null) {
-                    // item was found
-                    dreamTitle.setText(item.getString("DREAM_TITLE"));
-                    dreamEntry.setText(item.getString("DREAM_ENTRY"));
-                } else {
-                    Toast.makeText(DreamInterpreter.this, "FAILED TO RETRIEVE DREAM", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+//        dreamTitle = (TextView) findViewById(R.id.dream_title);
+//        dreamEntry = (TextView) findViewById(R.id.dream_entry);
+
+//        String parseObjId = getIntent().getStringExtra("parse_obj_id");
+//        ParseQuery<ParseObject> query = ParseQuery.getQuery("DREAM"); //which query to pull here?
+//        query.getInBackground(parseObjId, new GetCallback<ParseObject>() {
+//            @Override
+//            public void done(ParseObject item, ParseException e) {
+//                if (e == null) {
+//                    // item was found
+//                    dreamTitle.setText(item.getString("DREAM_TITLE"));
+//                    dreamEntry.setText(item.getString("DREAM_ENTRY"));
+//                } else {
+//                    Toast.makeText(DreamInterpreter.this, "FAILED TO RETRIEVE DREAM", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
         if(mWatsonAnswerString.length() > 0) {
             TextView watsonQuestion = (TextView) findViewById(R.id.watson_answer_text);
