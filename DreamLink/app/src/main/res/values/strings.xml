@@ -14,4 +14,10 @@
     <string name="login_button_text">Login</string>
     <string name="submit_button_text">Submit</string>
     <string name="facebook_app_id">facebook_app_id</string>
+
+    <string name="user_id">lsu_student5</string>
+    <string name="user_password">rED7bp9W</string>
+    <string name="user_watson_server_instance">https://dal09-gateway.watsonplatform.net/instance/556/deepqa/v1/question</string>
+    <string name="watson_instructions">Type a question for Watson in the input box below.</string>
+    <string name="watson_answer_title">Answer:</string>
 </resources>

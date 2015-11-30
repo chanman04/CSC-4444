@@ -1,0 +1,133 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<include
+    layout="@layout/toolbar">
+
+</include>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rootLayout"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.ibm.watson.WatsonPhotographyAndroid.MainActivity$PlaceholderFragment">
+
+
+        <!--Not sure how I need to get the dream's title and entry above the Watson ImageView -->
+        <!--<TextView-->
+            <!--android:id="@+id/dream_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="16sp"-->
+            <!--android:layout_centerHorizontal="true" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/dream_entry"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/dream_title"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textSize="12sp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"/>-->
+
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/watson_logo"
+            android:layout_below="@+id/dream_entry"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/watson_logo" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/watson_question_text"
+            android:layout_marginTop="42dp"
+            android:layout_below="@+id/watson_instructions_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:textColor="#ff000000"
+            android:hint="ex. What does falling mean in my dream?"
+            android:background="#ffffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ask Watson"
+            android:id="@+id/watson_submit_button"
+            android:layout_below="@+id/watson_question_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffbfe538"
+            android:background="@color/primarycolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watson_logo"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/watson_instructions"
+            android:id="@+id/watson_instructions_text"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/watson_answer_title"
+            android:layout_below="@+id/watson_submit_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="69dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/watson_answer_title"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/watson_answer_text"
+            android:layout_below="@+id/watson_answer_title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000000" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
+
+</RelativeLayout>

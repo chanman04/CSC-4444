@@ -8,7 +8,7 @@
 
     <include
         layout="@layout/toolbar"
-        android:id="@+id/include">
+        android:id="@+id/toolbar">
 
     </include>
 
@@ -19,7 +19,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:dividerHeight="1dp"
-        android:layout_below="@+id/include"
+        android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true" />
 
 

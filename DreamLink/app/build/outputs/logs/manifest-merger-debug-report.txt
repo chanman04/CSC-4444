@@ -141,33 +141,51 @@ ADDED from AndroidManifest.xml:15:9
 	android:name
 		ADDED from AndroidManifest.xml:16:13
 activity#csc4444.mike.dreamlink.activities.MainActivity
-ADDED from AndroidManifest.xml:22:9
+ADDED from AndroidManifest.xml:21:9
 	android:label
-		ADDED from AndroidManifest.xml:24:13
-	android:name
 		ADDED from AndroidManifest.xml:23:13
+	android:name
+		ADDED from AndroidManifest.xml:22:13
 activity#csc4444.mike.dreamlink.activities.RecordDream
-ADDED from AndroidManifest.xml:27:9
+ADDED from AndroidManifest.xml:26:9
 	android:label
-		ADDED from AndroidManifest.xml:29:13
-	android:name
 		ADDED from AndroidManifest.xml:28:13
-activity#csc4444.mike.dreamlink.activities.DreamLog
-ADDED from AndroidManifest.xml:32:9
+	android:name
+		ADDED from AndroidManifest.xml:27:13
+activity#csc4444.mike.dreamlink.activities.DreamInterpreter
+ADDED from AndroidManifest.xml:31:9
 	android:label
-		ADDED from AndroidManifest.xml:34:13
-	android:name
 		ADDED from AndroidManifest.xml:33:13
+	android:name
+		ADDED from AndroidManifest.xml:32:13
+activity#csc4444.mike.dreamlink.activities.DreamLog
+ADDED from AndroidManifest.xml:36:9
+	android:label
+		ADDED from AndroidManifest.xml:38:13
+	android:name
+		ADDED from AndroidManifest.xml:37:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:36:13
+ADDED from AndroidManifest.xml:39:9
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:37:17
+ADDED from AndroidManifest.xml:40:13
 	android:name
-		ADDED from AndroidManifest.xml:37:25
+		ADDED from AndroidManifest.xml:40:21
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:39:17
+ADDED from AndroidManifest.xml:41:13
 	android:name
-		ADDED from AndroidManifest.xml:39:27
+		ADDED from AndroidManifest.xml:41:23
+activity#csc4444.mike.dreamlink.activities.DreamDictionary
+ADDED from AndroidManifest.xml:45:9
+	android:label
+		ADDED from AndroidManifest.xml:47:13
+	android:name
+		ADDED from AndroidManifest.xml:46:13
+activity#csc4444.mike.dreamlink.activities.DreamTerm
+ADDED from AndroidManifest.xml:50:9
+	android:label
+		ADDED from AndroidManifest.xml:52:13
+	android:name
+		ADDED from AndroidManifest.xml:51:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:multidex:1.0.1:18:5

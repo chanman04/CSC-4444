@@ -6,4 +6,4 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/primarycolor">
-</android.support.v7.widget.Toolbar><!-- From: file:/Users/Mike/AndroidStudioProjects/CSC4444/DreamLink/app/src/main/res/layout/toolbar.xml -->
+</android.support.v7.widget.Toolbar><!-- From: file:/C:/Users/Kyle/AndroidStudioProjects/DreamCatcher/DreamLink/app/src/main/res/layout/toolbar.xml -->
